@@ -1,0 +1,10 @@
+= Cada um tem o que merece
+
+Primeiro, instale as dependências do projeto:
+
+  $ bundle install
+
+Depois, abra o shell no diretório raiz e digite o comando abaixo para
+iniciar a aplicação:
+
+  $ rackup config.ru
