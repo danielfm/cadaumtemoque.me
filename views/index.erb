@@ -8,10 +8,10 @@
     <meta name="og:description" content="Se você recebeu esse link, você fez por merecer"/>
     <meta name="description" content="Se você recebeu esse link, você fez por merecer"/>
 
-    <link rel="canonical" href="http://cadaumtemoque.me/rece"/>
-    <meta name="og:url" content="http://cadaumtemoque.me/rece"/>
+    <link rel="canonical" href="<%= @request.url %>"/>
+    <meta name="og:url" content="<%= @request.url %>"/>
 
-    <meta property="og:image" content="http://cadaumtemoque.me/disappointed.gif"/>
+    <meta property="og:image" content="http://<%= @request.host_with_port %>/memes/soclose.gif"/>
 
     <style>
       body {
@@ -65,7 +65,7 @@
 
     <div class="freddie">
       <a href="http://9gag.com" target="_blank">
-        <img src="/disappointed.gif" alt="Freddie Mercury"/>
+        <img src="/memes/soclose.gif" alt="U mad?"/>
       </a>
     </div>
   </body>
