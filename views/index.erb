@@ -60,7 +60,7 @@
     </script>
   </head>
   <body>
-    <h1>Cada um tem o que <strong>merece.</strong></h1>
+    <h1>Cada um tem <%= params[:t] ? params[:t] : "o" %> que <strong>merece.</strong></h1>
 
     <div class="freddie">
       <a href="http://9gag.com" target="_blank">
