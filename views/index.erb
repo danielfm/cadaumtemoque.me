@@ -18,6 +18,10 @@
         text-align: center;
       }
 
+      a {
+        text-decoration: none;
+      }
+
       h1 {
         position: absolute;
         top: 50%;
@@ -34,6 +38,10 @@
         color: #000;
       }
 
+      .hidden {
+        display: none;
+      }
+
       .freddie {
         border: 0;
         position: absolute;
@@ -44,6 +52,34 @@
 
       .freddie img {
         border: 0;
+      }
+
+      .toolbar {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+      }
+
+      #shortenerForm {
+        display: inline;
+      }
+
+      #shortenerForm input {
+        border: #ccc 1px solid;
+      }
+
+      #shortenerForm button {
+        border: none;
+        background: transparent;
+        color: #ccc;
+      }
+
+      .toolbar .hidden {
+        display: none;
+      }
+
+      .toolbar a:hover {
+        color: #ddd;
       }
     </style>
 
@@ -57,7 +93,29 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+
+      function shorten() {
+        BitlyClient.shorten("<%= request.url %>", "fillShortenedURL");
+      }
+
+      function fillShortenedURL(data) {
+        var field = document.getElementById("shortenedUrl");
+        var result = data.results["<%= request.url %>"];
+
+        if (!result) {
+          field.setAttribute("value", "Erro ao encurtar a URL");
+          field.setAttribute("class", "");
+          return;
+        }
+
+        document.getElementById("generateShortenedUrl").setAttribute("class", "hidden");
+
+        field.setAttribute("value", result.shortUrl);
+        field.setAttribute("class", "");
+      }
     </script>
+
+    <script type="text/javascript" charset="utf-8" src="http://bit.ly/javascript-api.js?version=latest&login=danielfm&apiKey=R_1ad173255a2f873c46e3f7bb312380ac"></script>
   </head>
   <body>
     <h1>Cada um tem <%= params[:oq] ? params[:oq] : "o" %> que <strong>merece.</strong></h1>
@@ -66,6 +124,13 @@
       <a href="http://9gag.com" target="_blank">
         <img src="/memes/soclose.gif" alt="U mad?"/>
       </a>
+    </div>
+
+    <div class="toolbar">
+      <form id="shortenerForm" action="#" onsubmit="return false;">
+        <input id="shortenedUrl" class="hidden" type="text" name="shortenedUrl" value="" size="30"/>
+        <button id="generateShortenedUrl" type="button" onclick="return shorten();">...</button>
+      </form>
     </div>
   </body>
 </html>
