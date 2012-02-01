@@ -11,5 +11,5 @@ iniciar a aplicação:
 
 == Personalizando a mensagem
 
-Passe um parâmetro +oq+ para personalizar a mensagem de _cada um tem o que
-merece_, exemplo: http://localhost:9292/rece?oq=o+projeto
+Passe um parâmetro +oq+ para personalizar a mensagem de
+_cada um tem o que merece_, exemplo: http://localhost:9292/rece?oq=o+projeto
