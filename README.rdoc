@@ -8,3 +8,8 @@ Depois, abra o shell no diretório raiz e digite o comando abaixo para
 iniciar a aplicação:
 
   $ rackup config.ru
+
+== Personalizando a mensagem
+
+Passe um parâmetro +oq+ para personalizar a mensagem de _cada um tem o que
+merece_, exemplo: http://localhost:9292/rece?oq=o+projeto
