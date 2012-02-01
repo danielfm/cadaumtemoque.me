@@ -12,4 +12,4 @@ iniciar a aplicação:
 == Personalizando a mensagem
 
 Passe um parâmetro +oq+ para personalizar a mensagem de
-_cada um tem o que merece_, exemplo: http://localhost:9292/rece?oq=o+projeto
+"cada um tem o que merece", exemplo: http://localhost:9292/rece?oq=o+projeto
