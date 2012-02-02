@@ -100,18 +100,17 @@
 
       function fillShortenedURL(data) {
         var field = document.getElementById("shortenedUrl");
-        var result = data.results["<%= request.url %>"];
 
-        if (!result) {
-          field.setAttribute("value", "Erro ao encurtar a URL");
+        for (var attr in data.results) {
+          var result = data.results[attr];
+
+           document.getElementById("generateShortenedUrl").setAttribute("class", "hidden");
+
+          field.setAttribute("value", result.shortUrl);
           field.setAttribute("class", "");
-          return;
+
+          break;
         }
-
-        document.getElementById("generateShortenedUrl").setAttribute("class", "hidden");
-
-        field.setAttribute("value", result.shortUrl);
-        field.setAttribute("class", "");
       }
     </script>
 
