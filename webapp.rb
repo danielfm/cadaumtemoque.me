@@ -10,7 +10,7 @@ configure :development do
 end
 
 configure :production do
-  set :mongo, ENV["MONGOHQ_URI"]
+  set :mongo, ENV["MONGOLAB_URI"]
 end
 
 # Helpers
